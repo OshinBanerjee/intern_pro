@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SCHEDULE PAGE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" />
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css" />
+<script type="text/javascript" src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"></script>
+  <script src="https://cdn.bootcss.com/select2/3.4.5/select2.min.js"></script>
+    <link href="https://cdn.bootcss.com/select2/3.4.5/select2.min.css" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="css/style1.css">
+  <script type="text/javascript" src="js/Schedule_function.js"></script>
+  <script type="text/javascript" src="js/reset_select2_function.js"></script>
+</head>
+<body>
+    <h1>SCHEDULE DETAILS</h1>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4"></div>    
+            <div class="col-lg-4">  
+                <div class="card">
+                    <div class="card-body">
+                        <div class="bg-image"></div>
+                        <form action="#" id="resetForm1" novalidate>        
+                            <div class="form-group input-group-lg" id="g1">
+                                    <label for="serName" id="sname">Server Name</label>
+                                    <input type="text" class="form-control" id="serName" pattern="[a-zA-Z].*"  minlength="8" placeholder="Enter Server Name" maxlength="30" onblur="showError(this.id,'sname','g1')" onfocus="hideError('g1')"required>
+                            </div>
+                            <div class="form-group input-group-lg" id="g7">
+                                <label for="selectJobId" id="sjid">Job ID</label>
+                                <select class="selectpicker" data-live-search="true">
+                                    <option data-tokens="a">afgefggfgd</option>
+                                    <option data-tokens="b">bsdfgdsf</option>
+                                    <option data-tokens="c">cdfsdfsf</option>
+                                </select>
+                            </div>
+                            <div class="form-group input-group-lg" id="g2">
+                                <label for="exname" id="ename">Executable Name</label>
+                                    <input type="text" class="form-control" id="exname" pattern="[a-zA-Z].*"  minlength="8" placeholder="Enter Executable Name" maxlength="35" onblur="showError(this.id,'ename','g2')" onfocus="hideError('g2')" required>
+                            </div>                          
+                            <div class="form-group input-group-lg" id="g3">
+                                <label for="maxdur" id="mdur">Maximum Duration(in days):</label>
+                                <input type="number" id="maxdur" value="0" min="0" max="500" class="form-control" onblur="showValidRange(this.id,'g3')" onfocus="hideError('g3')">
+                                
+                            </div>
+                            <div class="form-group input-group-lg" id="g4">
+                                <label for="depend" id="dep">Dependency</label>
+                                <input type="text" id="depend" class="form-control" maxlength="200" placeholder="Enter Dependency" onblur="showError(this.id,'dep','g4')" onfocus="hideError('g4')">
+                              
+                            </div>
+                            <div class="form-group" id="g5">
+                              <label for="basic" id="timelabel">Run Days(in days)</label>
+                                 <input type="text" id="basic" value="" onblur="showError(this.id,'timelabel','g5')" required>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-6">
+                            <div class="form-group" id="g6">
+                                <label for="startTime" id="stime">Start Time</label>
+                                <input type="time" id="startTime" onblur="showError(this.id,'stime','g6')"  onfocus="hideError('g6')" required>
+                            </div></div>
+                           
+                                <div class="col-sm-6">
+                             <div class="form-group" id="g7">
+                                <label for="endTime" id="etime">End Time</label>
+                                <input type="time" id="endTime" onblur="showError(this.id,'etime','g7')"  onfocus="hideError('g7')" required>
+                            </div></div>
+                            </div>
+                            <br><br>
+                            <input type="submit" class="btn btn-success " value="SUBMIT">
+                             <input type="button" value="RESET" id="reset_btn" onclick="reset_form()" style="float: right" class="btn btn-primary">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>​

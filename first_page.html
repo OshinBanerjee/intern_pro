@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BATCH DETAILS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+     
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+ <script type="text/javascript" src="first_page_function.js"></script>
+<style>
+    .alert{
+        color: red;
+    }
+</style>
+</head>
+<body>
+    <div class="row" style="background-color: royalblue">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+    <h1 style="text-align: center; font-size: 30px;">PROJECT DETAILS</h1>
+        </div>
+    </div>
+    <div class="container-fluid row" style="padding-top: 40px;">
+   <div class="col-lg-4"></div>
+   <div class="col-lg-4">
+        
+                <div class="card">
+					<div class="card-body">
+						<form action="#" id="submitForm" novalidate name="form_check">
+							<div class="form-group input-group-lg" id="pgid1" >
+								<label for="proName" id="pName">Project Name</label><i style="color:red">*</i>
+								<input type="text" class="form-control" style="border-radius: 25px;" id="proName" pattern="[a-zA-Z].*" placeholder="Enter Project Name" required onblur="showError(this.id,'pName','pgid1')" onfocus="hideError('pgid1')" onkeyup="checkform()">
+							</div>
+                            <div class="form-group input-group-lg" id="pgid2">
+								<label for="proDesc" id="pDesc">Project Description</label><i style="color:red">*</i>
+								<input type="textarea" class="form-control"  style="border-radius: 25px;" rows="5" id="proDesc" pattern="[a-zA-Z].*" placeholder="Enter Project Description" required onblur="showError(this.id,'pDesc','pgid2')" onfocus="hideError('pgid2')" onkeyup="checkform()">
+							</div>
+                            
+                           <div class="form-group">
+                               <fieldset  style="border: 1px solid darkgray;padding: 1px;">
+                                   <legend style=" width: auto; font-size: 15px; font-weight: bold ">Macro</legend>
+                                   <div class="form-group input-group-lg" id="pgid3" style="padding: 10px">
+                                       <label for="startDateM" id="sDateM">Start Date</label><i style="color:red">*</i>
+                                       <input type="date" class="form-control" id="startDateM" style="border-radius: 25px;" required onblur="showDateError(this.id,'endDateM','sDateM','pgid3')" onfocus="hideError('pgid3')" onkeyup="checkform()">
+                                   </div>
+                                   <div class="form-group input-group-lg" id="pgid4" style="padding: 10px">
+                                       <label for="endDateM" id="eDateM">End Date</label><i style="color:red">*</i>
+                                       <input type="date" class="form-control" id="endDateM" style="border-radius: 25px;" disabled required onblur="showError(this.id,'eDateM','pgid4')" onfocus="hideError('pgid4')" onkeyup="checkform()">
+                                   </div>
+                                  
+                               </fieldset>
+                           </div>
+                            <div class="form-group ">
+                               <fieldset  style="border: 1px solid darkgray;padding: 1px;">
+                                   <legend style=" width: auto; font-size: 15px; font-weight: bold ">Extraction</legend>
+                                   <div class="form-group input-group-lg" id="pgid5" style="padding: 10px">
+                                       <label for="startDateE" id="sDateE">Start Date</label><i style="color:red">*</i>
+                                       <input type="date" class="form-control" style="border-radius: 25px;" id="startDateE" required onblur="showDateError(this.id,'endDateE','sDateE','pgid5')" onfocus="hideError('pgid5')" onkeyup="checkform()">
+                                   </div>
+                                   <div class="form-group input-group-lg" id="pgid6" style="padding: 10px">
+                                       <label for="endDateE" id="eDateE">End Date</label><i style="color:red">*</i>
+                                       <input type="date" class="form-control" id="endDateE" style="border-radius: 25px;" disabled required onblur="showError(this.id,'eDateE','pgid6')" onfocus="hideError('pgid6')" onkeyup="checkform()">
+                                   </div>
+                                  
+                               </fieldset>
+                           </div>
+                            <div class="form-group ">
+                               <fieldset  style="border: 1px solid lightslategray;padding: 1px;">
+                                   <legend style=" width: auto; font-size: 15px; font-weight: bold ">Micro</legend>
+                                   <div class="form-group input-group-lg" id="pgid7" style="padding: 10px">
+                                       <label for="startDateMi" id="sDateMi">Start Date</label><i style="color:red">*</i>
+                                       <input type="date" class="form-control" style="border-radius: 25px;" id="startDateMi" required onblur="showDateError(this.id,'endDateMi','sDateMi','pgid7')" onfocus="hideError('pgid7')" onkeyup="checkform()">
+                                   </div>
+                                   <div class="form-group input-group-lg" id="pgid8" style="padding: 10px">
+                                       <label for="endDateMi" id="eDateMi">End Date</label><i style="color:red">*</i>
+                                       <input type="date" class="form-control" style="border-radius: 25px;" id="endDateMi" disabled required onblur="showError(this.id,'eDateMi','pgid8')" onfocus="hideError('pgid8')" onkeyup="checkform()">
+                                   </div>
+                                  
+
+                               </fieldset>
+                           </div>
+                            
+                            <div class="form-group">
+                                <fieldset style="border: 1px solid lightslategray;padding-top: 20px;">
+                                   <legend style=" width: auto; font-size: 15px; font-weight: bold ">No. of Resources</legend>
+                                    
+                                    <div class="form-group input-group-lg" id="pgid9" style="padding: 10px">
+                                      
+                                         <label for="ofShore" id="los">Offshore</label><i style="color:red">*</i>
+                                         <input type="number" id="ofShore" class="form-control" style="border-radius: 25px;" min="0" required onblur="showValidRange(this.id,'pgid9')" onfocus="hideError('pgid9')"onkeyup="checkform()">
+                                         
+                                         </div>
+                                   
+                                   <div class="form-group input-group-lg" id="pgid10" style="padding: 10px">
+                                       
+                                         <label for="onShore" id="lon" style="border:none;background-color:white;">Onshore</label><i style="color:red">*</i>
+                                         <input type="number" id="onShore" class="form-control" style="border-radius: 25px;" min="0" required onblur="showValidRange(this.id,'pgid10')" onfocus="hideError('pgid10')"onkeyup="checkform()">
+                                       
+                                         </div>
+                                </fieldset>
+                            </div>
+                                    <div class="form-group input-group-lg" id="pgid11" style="padding-top: 10px">
+                                        <label for="license" id="lic">No. of Licenses</label><i style="color:red">*</i>
+                                        <input type="number" class="form-control" style="border-radius: 25px;" id="license" min="0" required onblur="showValidRange(this.id,'pgid11')" onfocus="hideError('pgid11')"onkeyup="checkform()">
+                                    </div>
+                                    <div class="form-group input-group-lg" id="pgid12">
+                                        <label for="laptop" id="lap">No. of Laptops</label><i style="color:red">*</i>
+                                        <input type="number" class="form-control" style="border-radius: 25px;" id="laptop" min="0" required onblur="showValidRange(this.id,'pgid12')" onfocus="hideError('pgid12')"onkeyup="checkform()">
+                                    </div>
+                                    <div class="form-group input-group-lg" id="pgid13">
+                                        <label for="planograms">No. of Planograms</label>
+                                        <input type="number" class="form-control" style="border-radius: 25px;" id="planograms" min="0"  onblur="showValidRange(this.id,'pgid13')" onfocus="hideError('pgid13')" >
+                                    </div>
+                                    <div class="form-group input-group-lg" id="pgid14">
+                                        <label for="store">No. of Stores</label>
+                                        <input type="number" class="form-control" style="border-radius: 25px;" id="store" min="0"  onblur="showValidRange(this.id,'pgid14')" onfocus="hideError('pgid14')">
+                                    </div>
+                                
+                                <div class="row" style="padding-top: 40px;">
+                                   
+                            <button type="submit" class="btn btn-success col-sm-4" id="submit_btn" style="border-radius: 25px;">Submit</button>
+                            <div class="col-sm-4"></div>
+                            <button type="reset" class="btn btn-secondary col-sm-4" id="reset_btn" onclick="reset_form()" style="border-radius: 25px;">Reset</button>
+                                </div>
+						</form>
+					</div>
+            </div>
+           
+   </div>
+    </div>
+</body>
+</head>
+</html>

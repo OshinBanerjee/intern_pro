@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BATCH DETAILS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" />
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css" />
+<script type="text/javascript" src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"></script>
+  
+  <script src="js/Batch_function.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style1.css">
+  
+</head>
+<body>
+      <h1>BATCH DETAILS</h1>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-4"></div>
+			<div class="col-lg-4">
+				<div class="card">
+					<div class="card-body">
+						<div class="bg-image"></div>
+						<form action="#" id="resetForm" novalidate>
+							<div class="form-group input-group-lg" id="bgid7">
+								<label for="jobId" id="jid">Job ID</label>
+								<input type="text" class="form-control idJob" id="jobId" pattern="^[_A-z0-9]*((-|\s)*[_A-z0-9])*$" placeholder="Enter Job ID" required minlength="5" maxlength="10"  onblur="showError(this.id,'jid','bgid7')" onfocus="hideError('bgid7')">
+							
+							</div>
+							<div class="form-group input-group-lg" id="bgid1">
+								<label for="jobName" id="jname">Job Name</label>
+								<input type="text" class="form-control" id="jobName" pattern="[a-zA-Z].*" placeholder="Enter Job Name" required minlength="8" maxlength="30"  onblur="showError(this.id,'jname','bgid1')" onfocus="hideError('bgid1')">
+							
+							</div>
+							
+							<div class="form-group input-group-lg" id="bgid2">
+								<label for="exname" id="ename">Executable Name</label>
+								<input type="text" class="form-control" id="exname" pattern="[a-zA-Z].*" placeholder="Enter Executable Name"  minlength="8" maxlength="35" onblur="showError(this.id,'ename','bgid2')" onfocus="hideError('bgid2')"required>
+								
+							</div>
+							<div class="form-group input-group-lg" id="bgid3">
+								<label for="expath" id="epath">Executable Path</label>
+								<input type="text" class="form-control" id="expath" minlength="1" maxlength="100" placeholder="Enter Executable Path" onblur="showError(this.id,'epath','bgid3')" onfocus="hideError('bgid3')" required>
+								
+							</div>
+							<div class="form-group input-group-lg" id="bgid4">
+								<label for="lgfileName" id="lfname">Log File Name</label>
+								<input type="text" class="form-control" id="lgfileName" pattern="[a-zA-Z].*" placeholder="Enter Log File Name" minlength="8" maxlength="20" onblur="showError(this.id,'lfname','bgid4')" onfocus="hideError('bgid4')" required>
+							
+							</div>
+							<div class="form-group input-group-lg" id="bgid5">
+								<label for="lgfileLocation" id="lflocation">Log File Location</label>
+								<input type="text" class="form-control" id="lgfileLocation" placeholder="Enter Log File Location" minlength="1" maxlength="100" onblur="showError(this.id,'lflocation','bgid5')" onfocus="hideError('bgid5')" required>
+							
+							</div>
+							<div class="form-group " id="bgid6">
+								<label for="desp" id="descrip">Description</label>
+								<textarea class="form-control" rows="5" id="desp" placeholder="Enter Description" minlength="1" maxlength="200" onblur="showError(this.id,'descrip','bgid6')" onfocus="hideError('bgid6')" required></textarea>
+								
+							</div>
+							<input type="submit" class="btn btn-success" value="SUBMIT">
+							<input type="button" class="btn btn-primary" id="bat_reset_btn" onclick="reset_form()"  value="RESET" style="float:right">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>
